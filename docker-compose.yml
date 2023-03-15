@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  api:
+    container_name: todo-api
+    build: .
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    command: pnpm run start:dev
+    env_file:
+      - .env
