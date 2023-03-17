@@ -11,3 +11,5 @@ RUN pnpm install
 COPY . .
 
 RUN pnpm build
+
+RUN pnpm prune --production
